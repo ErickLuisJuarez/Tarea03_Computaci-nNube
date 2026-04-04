@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 
 import com.formacionbdi.springboot.app.item.models.Producto;
 import com.formacionbdi.springboot.app.item.models.Item;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @Service("serviceRestTemplate")
 public class ItemServiceImpl implements ItemService {
@@ -25,12 +26,23 @@ public class ItemServiceImpl implements ItemService {
 		return productos.stream().map(p -> new Item(p, 1)).collect(Collectors.toList());
 	}
 
+	@HystrixCommand(fallbackMethod = "metodoAlternativo")
 	@Override
 	public Item findById(Long id, Integer cantidad) {
 		Map<String, String> pathVariables = new HashMap<String, String>();
 		pathVariables.put("id", id.toString());
 		Producto producto = clienteRest.getForObject("http://localhost:8001/ver/{id}", Producto.class, pathVariables);
 		return new Item(producto, cantidad);
+	}
+	
+	public Item metodoAlternativo(Long id, Integer cantidad) {
+
+	    Producto producto = new Producto();
+	    producto.setId(id);
+	    producto.setNombre("Producto no disponible");
+	    producto.setPrecio(0.0);
+
+	    return new Item(producto, cantidad);
 	}
 
 	@Override
