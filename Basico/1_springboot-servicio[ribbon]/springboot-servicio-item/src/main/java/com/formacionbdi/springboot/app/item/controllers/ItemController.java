@@ -26,10 +26,22 @@ public class ItemController {
 	public List<Item> listar(){
 		return itemService.findAll();
 	}
-	
+
+	@HystrixCommand(fallbackMethod = "metodoAlternativo")
 	@GetMapping("/ver/{id}/cantidad/{cantidad}")
 	public Item detalle(@PathVariable Long id, @PathVariable Integer cantidad) {
 		return itemService.findById(id, cantidad);
+	}
+
+	public Item metodoAlternativo(Long id, Integer cantidad) {
+		Item item = new Item();
+		Producto producto = new Producto();
+		item.setCantidad(cantidad);
+		producto.setId(id);
+		producto.setNombre("Carro de repuesto");
+		producto.setPrecio(0.0);
+		item.setProducto(producto);
+		return item;
 	}
 	
 	@DeleteMapping("/eliminar/{id}")
