@@ -1,4 +1,4 @@
-# Tarea03_ComputaciónnNube
+# Tarea03_ComputaciónNube
 
 **Materia:** Seminario de Ciencias de la Computación B (Computación en la Nube) 
 **Profesor:** Gustavo Márquez Flores 
