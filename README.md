@@ -65,7 +65,7 @@ Se realiza una petición al endpoint:
 
 http://localhost:8002/ver/1/cantidad/1
 
-[Flujo normal](Imagenes/flujonormal.png)
+![Flujo normal](Imagenes/flujo-normal.png)
 
 
 En esta respuesta:
@@ -80,11 +80,10 @@ Se detiene el servicio servicio-productos y se vuelve a hacer la misma petición
 
 http://localhost:8002/ver/1/cantidad/1
 
-![Fallback](Imagenes/Captura de pantalla_2026-04-09_20-38-55.png)
+![Fallback](Imagenes/fallback.png)
 
 y en http://localhost:8761 podemos ver que el servicio de productos aparece como downed
-
-![Servicio down](Imagenes/Captura de pantalla_2026-04-09_20-38-44.png)
+![Eureka down](Imagenes/eurekadown.png)
 
 En este caso:
 
