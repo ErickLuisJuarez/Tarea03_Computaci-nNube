@@ -65,7 +65,7 @@ Se realiza una petición al endpoint:
 
 http://localhost:8002/ver/1/cantidad/1
 
-![Flujo normal](Imagenes/flujo-normal.png)
+![Flujo normal](Imagenes/flujonormal.png)
 
 
 En esta respuesta:
