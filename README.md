@@ -55,7 +55,7 @@ http://localhost:8002
 
 Para ver que funciona vamos a http://localhost:8761 y observamos que los servicios de Item y Producto se ven registrados en el servivio de Eureka
 
-![Eureka](Imagenes/Captura de pantalla_2026-04-09_20-18-40.png)
+![Eureka](Imagenes/eureka.png)
 
 ### 3. Funcionamiento
 
@@ -65,7 +65,8 @@ Se realiza una petición al endpoint:
 
 http://localhost:8002/ver/1/cantidad/1
 
-![Respuesta normal](Imagenes/Captura de pantalla_2026-04-09_20-32-48.png)
+[Flujo normal](Imagenes/flujonormal.png)
+
 
 En esta respuesta:
 
