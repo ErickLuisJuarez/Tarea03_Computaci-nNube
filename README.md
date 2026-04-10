@@ -55,7 +55,7 @@ http://localhost:8002
 
 Para ver que funciona vamos a http://localhost:8761 y observamos que los servicios de Item y Producto se ven registrados en el servivio de Eureka
 
-Imagenes/Captura de pantalla_2026-04-09_20-18-40.png
+![Eureka](Imagenes/Captura de pantalla_2026-04-09_20-18-40.png)
 
 ### 3. Funcionamiento
 
@@ -65,7 +65,7 @@ Se realiza una petición al endpoint:
 
 http://localhost:8002/ver/1/cantidad/1
 
-Imagenes/Captura de pantalla_2026-04-09_20-32-48.png
+![Respuesta normal](Imagenes/Captura de pantalla_2026-04-09_20-32-48.png)
 
 En esta respuesta:
 
@@ -79,11 +79,11 @@ Se detiene el servicio servicio-productos y se vuelve a hacer la misma petición
 
 http://localhost:8002/ver/1/cantidad/1
 
-Imagenes/Captura de pantalla_2026-04-09_20-38-55.png
+![Fallback](Imagenes/Captura de pantalla_2026-04-09_20-38-55.png)
 
 y en http://localhost:8761 podemos ver que el servicio de productos aparece como downed
 
-Imagenes/Captura de pantalla_2026-04-09_20-38-44.png
+![Servicio down](Imagenes/Captura de pantalla_2026-04-09_20-38-44.png)
 
 En este caso:
 
